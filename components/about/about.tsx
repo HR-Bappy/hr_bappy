@@ -8,7 +8,6 @@ function AboutSection() {
 		const projects: any = document.getElementById("projects");
 		const gallery: any = document.getElementById("gallery");
 		let c = gallery.offsetHeight;
-		console.log(c);
 	}, []);
 
 	const setActiveStyle = (color: string) => {

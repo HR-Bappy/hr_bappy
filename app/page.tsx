@@ -85,7 +85,6 @@ export default function Home() {
 			servicesPos = services?.getBoundingClientRect(),
 			contactPos = contact?.getBoundingClientRect(),
 			recommendationsPos = recommendations?.getBoundingClientRect();
-		console.log("recommendationsPos", contactPos?.top);
 
 		if (contactPos?.top <= 1) {
 			contactLink?.classList.add("active");
@@ -93,7 +92,6 @@ export default function Home() {
 			aboutLink?.classList.remove("active");
 			recommendationsLink?.classList.remove("active");
 			homeLink?.classList.remove("active");
-			console.log("recommendationsPos1111", contactPos?.top);
 
 			return;
 		}
@@ -181,7 +179,6 @@ export default function Home() {
 	};
 	const handleThemeColor = () => {
 		let body: any = document.querySelector("body");
-		console.log("body", body);
 		if (body?.classList?.contains("dark")) {
 			defaultColor = "#302e4d";
 		} else defaultColor = "#fff";

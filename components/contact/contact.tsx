@@ -1,7 +1,41 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import "./contact.scss";
 
 function ContactComponent() {
+	const form: any = useRef();
+
+	const sendMessage = (e: any) => {
+		e.preventDefault();
+
+		const messageContent: any = {
+			to_name: "Bappy",
+			from_name: "mdhabiburrb@gmail.com",
+			message: "testing",
+		};
+		console.log("messageContent", form.current);
+		emailjs
+			.sendForm(
+				"service_ijqk2lp",
+				"template_9pykctc",
+				form.current,
+				"JIt4gqAOQZo9AdwRV"
+			)
+			.then(
+				(result) => {
+					let temp: any = document.getElementById("contact__form");
+					temp.reset();
+					console.log(result.text);
+				},
+				(error) => {
+					alert("failed");
+
+					console.log(error.text);
+				}
+			);
+
+		console.log("messageContent 111", messageContent);
+	};
 	return (
 		<section className="contact section" id="contact">
 			<div className="container">
@@ -48,7 +82,7 @@ function ContactComponent() {
 				{/* <h4 className="contact-sub-title padd-15">
 					I&lsquo;M AT YOUR SERVICES
 				</h4> */}
-				<form className="contact__form">
+				<form className="contact__form" ref={form} id="contact__form">
 					<div className="row">
 						<div className="contact-form padd-15">
 							<div className="row">
@@ -58,6 +92,8 @@ function ContactComponent() {
 											type="text"
 											className="form-control name__"
 											placeholder="Name"
+											name="to_name"
+											required
 										/>
 									</div>
 								</div>
@@ -67,6 +103,7 @@ function ContactComponent() {
 											type="email"
 											className="form-control email__"
 											placeholder="Email"
+											name="from_name"
 											required
 										/>
 									</div>
@@ -83,6 +120,7 @@ function ContactComponent() {
 											type="text"
 											className="form-control subject__"
 											placeholder="Subject"
+											name="subject"
 											required
 										/>
 									</div>
@@ -90,16 +128,19 @@ function ContactComponent() {
 								<div className="form-item col-12 padd-15">
 									<div className="form-group">
 										<textarea
-											name=""
-											id=""
 											className="form-control message__"
 											placeholder="Message"
 											required
+											name="message"
 										/>
 									</div>
 								</div>
 								<div className="form-item col-12 padd-15">
-									<button type="submit" className="btn submit__btn">
+									<button
+										type="submit"
+										className="btn-border"
+										onClick={sendMessage}
+									>
 										Send Message
 									</button>
 								</div>

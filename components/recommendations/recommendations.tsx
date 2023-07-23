@@ -1,7 +1,98 @@
 import React from "react";
 import "./recommendations.scss";
+import raselVi from "../../asset/images/resel_vi.jpeg";
+import imtiazVi from "../../asset/images/imtiaz_vi.jpeg";
+import mirazVi from "../../asset/images/miraz_vi.jpeg";
+import tanbirVi from "../../asset/images/tanbir_vi.jpeg";
 
 function Recommendations() {
+	const data = [
+		// {
+		// 	id: 1,
+		// 	name: "Imtiaz Kabir",
+		// 	designation: "Sr. Software Engineer at WebX Global Ltd.",
+		// 	image: imtiazVi?.src,
+		// 	description:
+		// 		"Experienced in both functional and OOP: Java, JavaScript,TypeScript functional and OOP: Java, JavaScript, TypeScript.",
+		// 	socialLink: [
+		// 		{
+		// 			icon: "fa-brands fa-linkedin-in",
+		// 			link: "https://www.linkedin.com/in/ikziko/",
+		// 		},
+		// 		{
+		// 			icon: "fa-brands fa-linkedin-in",
+		// 			link: "https://www.linkedin.com/in/nhrasalcse/",
+		// 		},
+		// 		{
+		// 			icon: "fa-regular fa-envelope",
+		// 			link: "https://www.linkedin.com/in/nhrasalcse/",
+		// 		},
+		// 	],
+		// },
+		// {
+		// 	id: 1,
+		// 	name: "Nurul Huda Rasel",
+		// 	designation: "Sr. Software Engineer at WebX Global Ltd.",
+		// 	image: raselVi?.src,
+		// 	description:
+		// 		"Experienced in both functional and OOP: Java, JavaScript,TypeScript functional and OOP: Java, JavaScript, TypeScript.",
+		// 	socialLink: [
+		// 		{
+		// 			icon: "fa-brands fa-linkedin-in",
+		// 			link: "https://www.linkedin.com/in/nhrasalcse/",
+		// 		},
+		// 		{
+		// 			icon: "fa-brands fa-linkedin-in",
+		// 			link: "https://www.linkedin.com/in/nhrasalcse/",
+		// 		},
+		// 		{
+		// 			icon: "fa-regular fa-envelope",
+		// 			link: "https://www.linkedin.com/in/nhrasalcse/",
+		// 		},
+		// 	],
+		// },
+
+		{
+			id: 1,
+			name: "Md. Tanbir Hossen",
+			designation: "Head of Technology",
+			image: tanbirVi?.src,
+			description:
+				"Experienced in both functional and OOP: Java, JavaScript,TypeScript functional and OOP: Java, JavaScript, TypeScript.",
+			socialLink: [
+				{
+					icon: "fa-brands fa-linkedin-in",
+					link: "https://www.linkedin.com/in/mdhossentanbir/",
+				},
+				{
+					icon: "fa-brands fa-linkedin-in",
+					link: "https://www.linkedin.com/in/nhrasalcse/",
+				},
+				{
+					icon: "fa-regular fa-envelope",
+					link: "https://www.linkedin.com/in/nhrasalcse/",
+				},
+			],
+		},
+		{
+			id: 2,
+			name: "Md Miraj Khandaker",
+			designation: "Sr. Full Stack Software Engineer at SWAP",
+			image: mirazVi?.src,
+			description:
+				"Experienced in both functional and OOP: Java, JavaScript,TypeScript functional and OOP: Java, JavaScript, TypeScript.",
+			socialLink: [
+				{
+					icon: "fa-brands fa-linkedin-in",
+					link: "https://www.linkedin.com/in/miraj-khandaker/",
+				},
+				{
+					icon: "fa-regular fa-envelope",
+					link: "mailto:mirajkhandaker@gmail.com",
+				},
+			],
+		},
+	];
 	return (
 		<section className="recommendations section" id="recommendations">
 			<div className="container">
@@ -18,107 +109,41 @@ function Recommendations() {
 					</div>
 				</div>
 				<div className="row">
-					<div className="service-item padd-20">
-						<div className="service_item-inner shadow-dark-hover">
-							<div className="card-top">
-								<div className="img-section">
-									<img
-										src="https://media.licdn.com/dms/image/D5603AQFPT96OEkO0wA/profile-displayphoto-shrink_800_800/0/1668694277671?e=2147483647&v=beta&t=BxROotjbkFIb2PNyChPYyycIxE_JuKpIX0VB-U8uMRI"
-										alt="asfee"
-									/>
+					{data?.map((item: any, index: number) => {
+						return (
+							<div className="service-item padd-20" key={index}>
+								<div className="service_item-inner shadow-dark-hover">
+									<div className="card-top">
+										<div className="img-section">
+											<img src={item?.image} alt={item?.name} />
+										</div>
+										<h4>
+											<span className="html-code">&lt;h4&gt;</span>
+											<span className="v-line-h">{item?.name}</span>
+											<span className="html-code">&lt;/h4&gt;</span>
+										</h4>
+									</div>
+
+									<div>
+										<p className="designation">{item?.designation}</p>
+
+										<p className="description">{item?.description}</p>
+										<ul className="social-link">
+											{item?.socialLink?.map((link: any, indx: number) => {
+												return (
+													<li key={indx}>
+														<a href={link.link} target="_blank">
+															<i className={link.icon}></i>
+														</a>
+													</li>
+												);
+											})}
+										</ul>
+									</div>
 								</div>
-								<h4>
-									<span className="html-code">&lt;h4&gt;</span>
-									<span className="v-line-h">Software Development</span>
-									<span className="html-code">&lt;/h4&gt;</span>
-								</h4>
 							</div>
-
-							<div>
-								<span className="html-code">&lt;p&gt;</span>
-								<p className="v-line-p">
-									Experienced in both functional and OOP: Java, JavaScript,
-									TypeScript.
-								</p>
-								<span className="html-code">&lt;/p&gt;</span>
-							</div>
-						</div>
-					</div>
-					<div className="service-item padd-20">
-						<div className="service_item-inner shadow-dark-hover">
-							<div className="card-top">
-								<div className="img-section">
-									<img
-										src="https://media.licdn.com/dms/image/D5603AQF7evPyAIfKQQ/profile-displayphoto-shrink_400_400/0/1640497025113?e=1695254400&v=beta&t=b84oZ-Z6Ft2tZAjf94oLYslh8U3yPPY2eCGMsbynOzI"
-										alt="asfee"
-									/>
-								</div>
-								<h4>
-									<span className="html-code">&lt;h4&gt;</span>
-									<span className="v-line-h">Frontend: React, NextJS</span>
-									<span className="html-code">&lt;/h4&gt;</span>
-								</h4>
-							</div>
-
-							<div>
-								<span className="html-code">&lt;p&gt;</span>
-								<p className="v-line-p">
-									Passionate about UI/UX. Over 2 years of development experience
-									in HTML, CSS, SASS, JavaScript, TypeScript, Redux, React and
-									NextJs frameworks.
-								</p>
-								<span className="html-code">&lt;/p&gt;</span>
-							</div>
-						</div>
-					</div>
-					<div className="service-item padd-20">
-						<div className="service_item-inner shadow-dark-hover">
-							<div className="card-top">
-								<div className="icon space">
-									<i className="fa fa-code"></i>
-								</div>
-								<h4>
-									<span className="html-code">&lt;h4&gt;</span>
-									<span className="v-line-h">Backend: NodeJs</span>
-									<span className="html-code">&lt;/h4&gt;</span>
-								</h4>
-							</div>
-
-							<div>
-								<span className="html-code">&lt;p&gt;</span>
-								<p className="v-line-p">
-									Though have not much professional experience but worked
-									several personal project with NodeJs, Express, MongoDB.
-								</p>
-								<span className="html-code">&lt;/p&gt;</span>
-							</div>
-						</div>
-					</div>
-
-					<div className="service-item padd-20">
-						<div className="service_item-inner shadow-dark-hover">
-							<div className="card-top">
-								<div className="icon space">
-									<i className="fa fa-search"></i>
-								</div>
-								<h4>
-									<span className="html-code">&lt;h4&gt;</span>
-									<span className="v-line-h">Web Design</span>
-									<span className="html-code">&lt;/h4&gt;</span>
-								</h4>
-							</div>
-
-							<div>
-								<span className="html-code">&lt;p&gt;</span>
-								<p className="v-line-p">
-									Over more than 2 years of experience in web development.
-									Implemented 6+ interactive website using HTML, CSS,
-									JavaScript, TypeScript with the help of JS Library.
-								</p>
-								<span className="html-code">&lt;/p&gt;</span>
-							</div>
-						</div>
-					</div>
+						);
+					})}
 				</div>
 			</div>
 		</section>
