@@ -34,7 +34,6 @@ function StyleSwitcher({ handleThemeColor }: any) {
 		const dayNight: any = document.querySelector(".daynight");
 
 		if (document.body.classList.contains("dark")) {
-			console.log("yes");
 			dayNight.querySelector("i").classList.add("fa-sun");
 		} else {
 			dayNight.querySelector("i").classList.add("fa-moon");

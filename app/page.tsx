@@ -1,6 +1,7 @@
 "use client";
 
 import AboutSection from "@/components/about/about";
+import Alert from "@/components/alert/alert";
 import ContactComponent from "@/components/contact/contact";
 import HomeSection from "@/components/home/home";
 import Recommendations from "@/components/recommendations/recommendations";
@@ -184,6 +185,7 @@ export default function Home() {
 		} else defaultColor = "#fff";
 		init();
 	};
+	const [isShow, setIsShow] = useState(true);
 	return (
 		<div className="main-content" onScroll={scrollDown}>
 			<HomeSection />

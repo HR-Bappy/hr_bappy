@@ -58,19 +58,15 @@ function Recommendations() {
 			designation: "Head of Technology",
 			image: tanbirVi?.src,
 			description:
-				"Experienced in both functional and OOP: Java, JavaScript,TypeScript functional and OOP: Java, JavaScript, TypeScript.",
+				"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer",
 			socialLink: [
 				{
 					icon: "fa-brands fa-linkedin-in",
 					link: "https://www.linkedin.com/in/mdhossentanbir/",
 				},
 				{
-					icon: "fa-brands fa-linkedin-in",
-					link: "https://www.linkedin.com/in/nhrasalcse/",
-				},
-				{
 					icon: "fa-regular fa-envelope",
-					link: "https://www.linkedin.com/in/nhrasalcse/",
+					link: "mailto:",
 				},
 			],
 		},
@@ -80,7 +76,7 @@ function Recommendations() {
 			designation: "Sr. Full Stack Software Engineer at SWAP",
 			image: mirazVi?.src,
 			description:
-				"Experienced in both functional and OOP: Java, JavaScript,TypeScript functional and OOP: Java, JavaScript, TypeScript.",
+				"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever .",
 			socialLink: [
 				{
 					icon: "fa-brands fa-linkedin-in",

@@ -1,6 +1,7 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Alert from "@/components/alert/alert";
 
 const ContactUs = () => {
 	const form: any = useRef();
@@ -25,10 +26,11 @@ const ContactUs = () => {
 				}
 			);
 	};
+	const [isShow, setIsShow] = useState(false);
 
 	return (
 		<div className="main-content">
-			<form ref={form}>
+			{/* <form ref={form}>
 				<label>Name</label>
 				<input type="text" name="to_name" />
 				<label>Email</label>
@@ -36,7 +38,16 @@ const ContactUs = () => {
 				<label>Message</label>
 				<textarea name="message" />
 				<input type="submit" value="Send" onClick={sendEmail} />
-			</form>
+			</form> */}
+			<div className="container">
+				<div className="row">
+					<br />
+					<br />
+					<br />
+					<br />
+					<button onClick={() => setIsShow(!isShow)}>Click me baby</button>
+				</div>
+			</div>
 		</div>
 	);
 };

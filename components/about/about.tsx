@@ -10,10 +10,6 @@ function AboutSection() {
 		let c = gallery.offsetHeight;
 	}, []);
 
-	const setActiveStyle = (color: string) => {
-		console.log(color);
-	};
-
 	const handleScroll = (e: any) => {
 		const experience: any = document.getElementById("experience");
 		const projects: any = document.getElementById("projects");

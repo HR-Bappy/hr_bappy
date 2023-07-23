@@ -1,19 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.scss";
+import Alert from "../alert/alert";
 
 function ContactComponent() {
+	const [isShow, setIsShow] = useState("");
 	const form: any = useRef();
 
 	const sendMessage = (e: any) => {
 		e.preventDefault();
-
-		const messageContent: any = {
-			to_name: "Bappy",
-			from_name: "mdhabiburrb@gmail.com",
-			message: "testing",
-		};
-		console.log("messageContent", form.current);
 		emailjs
 			.sendForm(
 				"service_ijqk2lp",
@@ -25,17 +20,15 @@ function ContactComponent() {
 				(result) => {
 					let temp: any = document.getElementById("contact__form");
 					temp.reset();
-					console.log(result.text);
+					setIsShow("success");
 				},
 				(error) => {
-					alert("failed");
-
-					console.log(error.text);
+					console.log(error);
+					setIsShow("error");
 				}
 			);
-
-		console.log("messageContent 111", messageContent);
 	};
+
 	return (
 		<section className="contact section" id="contact">
 			<div className="container">
@@ -45,9 +38,6 @@ function ContactComponent() {
 					</div>
 				</div>
 				<h3 className="contact-title padd-15">Contact</h3>
-				{/* <h4 className="contact-sub-title padd-15">
-					I&lsquo;M AT YOUR SERVICES
-				</h4> */}
 				<div className="row">
 					<div className="contact-info-item padd-15">
 						<div className="icon">
@@ -79,9 +69,6 @@ function ContactComponent() {
 					</div>
 				</div>
 				<h3 className="contact-title padd-15">Let&lsquo;s Hangout</h3>
-				{/* <h4 className="contact-sub-title padd-15">
-					I&lsquo;M AT YOUR SERVICES
-				</h4> */}
 				<form className="contact__form" ref={form} id="contact__form">
 					<div className="row">
 						<div className="contact-form padd-15">
@@ -149,6 +136,14 @@ function ContactComponent() {
 					</div>
 				</form>
 			</div>
+			{isShow !== "" && (
+				<Alert
+					setIsShow={setIsShow}
+					message="Message has send successfully"
+					success={isShow === "success" && true}
+					error={isShow === "error" && true}
+				/>
+			)}
 		</section>
 	);
 }
