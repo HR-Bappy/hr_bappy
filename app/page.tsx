@@ -87,7 +87,7 @@ export default function Home() {
 			contactPos = contact?.getBoundingClientRect(),
 			recommendationsPos = recommendations?.getBoundingClientRect();
 
-		if (contactPos?.top <= 1) {
+		if (contactPos?.top < 0) {
 			contactLink?.classList.add("active");
 			servicesLink?.classList.remove("active");
 			aboutLink?.classList.remove("active");

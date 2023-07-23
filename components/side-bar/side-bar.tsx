@@ -18,9 +18,9 @@ function Sidebar() {
 	return (
 		<div className="aside">
 			<div className="logo">
-				<a href="./index.html">
+				<Link href="/">
 					<span>B</span>appy
-				</a>
+				</Link>
 			</div>
 			<div className="nav-toggler">
 				<span id="nav-icon" className="nav-icon-menu"></span>
