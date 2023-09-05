@@ -97,16 +97,6 @@ function AboutSection() {
 									</div>
 									<div className="item-info padd-15">
 										<p>
-											Age : <span>00</span>
-										</p>
-									</div>
-									<div className="item-info padd-15">
-										<p>
-											Website : <span>www.ttt.com</span>
-										</p>
-									</div>
-									<div className="item-info padd-15">
-										<p>
 											Email : <span>mdhabiburrb@gmail.com</span>
 										</p>
 									</div>
