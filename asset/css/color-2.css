@@ -1,5 +1,6 @@
 :root{
     --skin-color: #fa5b0f;
     --skin-color-lighten:rgba(250, 89, 15, 0.603);
+    --skin-color-75:rgba(250, 89, 15, 0.75);
     --skin-color-10:rgba(250, 89, 15, 0.081);
 }

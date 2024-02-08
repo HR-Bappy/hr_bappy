@@ -1,7 +1,6 @@
 "use client";
 
 import AboutSection from "@/components/about/about";
-import Alert from "@/components/alert/alert";
 import ContactComponent from "@/components/contact/contact";
 import HomeSection from "@/components/home/home";
 import Recommendations from "@/components/recommendations/recommendations";
@@ -10,7 +9,7 @@ import StyleSwitcher from "@/components/style-switcher/style-switcher";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-	var defaultColor = "#302e4d";
+	const [defaultColor, setDefaultColor] = useState("#302e4d");
 
 	useEffect(() => {
 		var span: any = document.querySelector(".type-writer");
@@ -59,7 +58,7 @@ export default function Home() {
 		}
 
 		// scrollDown();
-		init();
+		init("#302e4d");
 	}, []);
 
 	const scrollDown = () => {
@@ -139,40 +138,44 @@ export default function Home() {
 		);
 	};
 
-	const letterStyle = (char: string, indx: number) => {
+	const letterStyle = (char: string, indx: number, color: string) => {
 		if (char === " ") return `<span class='space'></span>`;
 
 		return `<span
 				class="letter"
 				onMouseOver="this.style.color='${randColor()}'"
-				onMouseOut='this.style.color="${defaultColor}" '
+				onMouseOut='this.style.color="${color}" '
 				style="transition:all .1s ease-in-out;"
 			>
 				${char}
 			</span>`;
 	};
 
-	const splictChar = (text: any) => {
+	const splictChar = (text: any, color: any) => {
 		let temp = "";
 		for (let i = 0; i < text.length; i++) {
-			temp = temp + letterStyle(text[i], Math.floor(Math.random() * 5));
+			temp = temp + letterStyle(text[i], Math.floor(Math.random() * 5), color);
 		}
 
 		return temp;
 	};
 
-	const init = () => {
+	const init = (color: any) => {
 		let about: any = document.getElementById("about-me-title");
 		let services: any = document.getElementById("services-title");
 		let recommendations: any = document.getElementById("recommendations-title");
 		let contact: any = document.getElementById("contact-title");
 		// let recommendations: any = document.getElementById("recommendations-title");
 
-		if (about) about.innerHTML = `<h2>${splictChar("About Me")}</h2>`;
-		if (services) services.innerHTML = `<h2>${splictChar("Services")}</h2>`;
+		if (about) about.innerHTML = `<h2>${splictChar("About Me", color)}</h2>`;
+		if (services)
+			services.innerHTML = `<h2>${splictChar("Services", color)}</h2>`;
 		if (recommendations)
-			recommendations.innerHTML = `<h2>${splictChar("Recommendations")}</h2>`;
-		if (contact) contact.innerHTML = `<h2>${splictChar("Contact")}</h2>`;
+			recommendations.innerHTML = `<h2>${splictChar(
+				"Recommendations",
+				color
+			)}</h2>`;
+		if (contact) contact.innerHTML = `<h2>${splictChar("Contact", color)}</h2>`;
 		// if (document.getElementById("experience-title"))
 		// 	document.getElementById("experience-title").innerHTML = `<h2>${splictChar(
 		// 		"HR Bappy"
@@ -181,11 +184,14 @@ export default function Home() {
 	const handleThemeColor = () => {
 		let body: any = document.querySelector("body");
 		if (body?.classList?.contains("dark")) {
-			defaultColor = "#302e4d";
-		} else defaultColor = "#fff";
-		init();
+			setDefaultColor("#302e4d");
+			init("#302e4d");
+		} else {
+			setDefaultColor("#fff");
+			init("#fff");
+		}
 	};
-	const [isShow, setIsShow] = useState(true);
+
 	return (
 		<div className="main-content" onScroll={scrollDown}>
 			<HomeSection />

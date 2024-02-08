@@ -6,26 +6,31 @@ function StyleSwitcher({ handleThemeColor }: any) {
 		{
 			skinColor: "crimson",
 			light: "rgba(220, 20, 60, 0.603)",
+			light_75: "rgba(220, 20, 60, 0.75)",
 			lighter: "rgba(220, 20, 60, 0.081)",
 		},
 		{
 			skinColor: "#fa5b0f",
 			light: "rgba(250, 89, 15, 0.603)",
+			light_75: "rgba(250, 89, 15, 0.75)",
 			lighter: "rgba(250, 89, 15, 0.081)",
 		},
 		{
 			skinColor: "#37b182",
 			light: "rgba(55,177,130,.603)",
+			light_75: "rgba(55,177,130,.75)",
 			lighter: "rgba(55,177,130,.081)",
 		},
 		{
 			skinColor: "#1854b4",
 			light: "rgba(24,84,180,.603)",
+			light_75: "rgba(24,84,180,.75)",
 			lighter: "rgba(24,84,180,.081)",
 		},
 		{
 			skinColor: "#f021b2",
 			light: "rgba(240,33,178,.603)",
+			light_75: "rgba(240,33,178,.75)",
 			lighter: "rgba(240,33,178,.081)",
 		},
 	];
@@ -52,6 +57,10 @@ function StyleSwitcher({ handleThemeColor }: any) {
 		document.documentElement.style.setProperty(
 			"--skin-color-10",
 			colorList[color].lighter
+		);
+		document.documentElement.style.setProperty(
+			"--skin-color-75",
+			colorList[color].light_75
 		);
 	};
 
