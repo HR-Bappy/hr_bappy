@@ -1,0 +1,33 @@
+.hr-nav{
+  background: rgb(146, 144, 144);
+  margin-top: 30px;
+  padding: 20px 0;
+  .hr-nav-link{
+    padding: 10px 25px;
+    // border-bottom: 2px solid rgb(225, 225, 225);
+    transition:all .3s ease-out;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      height: 20px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: red;
+      transform: scaleX(0);
+      transform-origin: left;
+    transition:all .3s ease-out;
+
+    }
+
+    &:hover{
+      // border-bottom: 2px solid red;
+    &::before{
+      right: 0;
+      transform: scaleY(1);
+    }
+
+    }
+  }
+}
