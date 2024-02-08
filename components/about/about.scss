@@ -389,9 +389,7 @@ div#mouse-circle {
 			bottom: 5px;
 			left: 0;
 			right: 0;
-			background-color: var(--skin-color-75);
-			// background-color: var(--skin-color);
-
+			background-color: var(--skin-color-lighten);
 			overflow: hidden;
 			width: 100%;
 			height: 0;
@@ -415,8 +413,13 @@ div#mouse-circle {
 		.text span {
 			font-weight: 300;
 		}
-		&:hover .img-overlay{
+		&:hover {
+			.img-overlay{
 			height: calc( 100% - 5px);
+			}
+			img{
+				filter: blur(10px);
+			}
 		}
 	}
 }
@@ -433,5 +436,5 @@ div#mouse-circle {
 	height: auto;
 
 	-webkit-transition: all 0.2s;
-	transition: all 0.2s;
+	transition: all 0.5s;
 }
