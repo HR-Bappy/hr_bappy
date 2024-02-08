@@ -62,6 +62,7 @@ function StyleSwitcher({ handleThemeColor }: any) {
 			"--skin-color-75",
 			colorList[color].light_75
 		);
+		toggleStyle();
 	};
 
 	const toggleStyle = () => {
