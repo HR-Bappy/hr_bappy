@@ -73,8 +73,8 @@ function Draggable({ children }: any) {
 	return (
 		<div className="draggable">
 			<ul className="sortable-list">
-				{data?.map((item: any) => (
-					<li className="item" draggable="true">
+				{data?.map((item: any, index: any) => (
+					<li className="item" draggable="true" key={index}>
 						<div className="details">
 							<img src={item.img} alt="" />
 							<span>{item.title}</span>
