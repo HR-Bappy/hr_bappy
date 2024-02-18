@@ -12,7 +12,7 @@ function Alert({
 	error?: boolean;
 	success?: boolean;
 	isShow?: boolean;
-	setIsShow: any;
+	setIsShow?: any;
 }) {
 	const [show, setShow] = useState<boolean>(true);
 	useEffect(() => {

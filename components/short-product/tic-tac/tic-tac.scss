@@ -1,0 +1,70 @@
+.tic-tac {
+	table,
+	th,
+	td {
+		border: 2px solid black;
+		border-collapse: collapse;
+	}
+	.board {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		.game-over{
+			position: absolute;
+			background: #00000078;
+			top: 5rem;
+			bottom: 5rem;
+			left: 0;
+			right: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			h1,h4{
+				text-shadow: 0 0 2px rgb(255, 255, 255)
+			}
+		}
+		table {
+			td {
+				height: 130px;
+				width: 130px;
+				transition: 0.3s ease-in-out;
+				cursor: pointer;
+				text-align: center;
+				font-size: 6rem;
+				text-shadow: 0 0 2px transparent, 0 0 8px transparent;
+
+				// font-weight: 600;
+
+				&:hover {
+					background: rgb(216, 216, 216);
+				}
+			}
+      td.x-mark{
+        color: red;
+				text-shadow: 0 0 2px rgb(250, 50, 50), 0 0 8px rgb(250, 50, 50);
+      }
+      td.o-mark{
+        color: green;
+				text-shadow: 0 0 2px #0fa, 0 0 8px #0fa;
+      }
+		}
+	}
+	.main-wrap__inside{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 2rem;
+		.control-panel{
+			margin-top: 1.5rem;
+			button{
+				padding: 5px 1rem;
+				cursor: pointer;
+			}
+		}
+		.board-instructions{
+			margin-bottom: 1.5rem;
+		}
+	}
+}

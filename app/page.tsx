@@ -5,6 +5,7 @@ import ContactComponent from "@/components/contact/contact";
 import HomeSection from "@/components/home/home";
 import Recommendations from "@/components/recommendations/recommendations";
 import ServicesComponent from "@/components/services/services";
+import Sidebar from "@/components/side-bar/side-bar";
 import StyleSwitcher from "@/components/style-switcher/style-switcher";
 import { useEffect, useState } from "react";
 
@@ -193,13 +194,16 @@ export default function Home() {
 	};
 
 	return (
-		<div className="main-content" onScroll={scrollDown}>
-			<HomeSection />
-			<AboutSection />
-			<ServicesComponent />
-			<Recommendations />
-			<ContactComponent />
-			<StyleSwitcher handleThemeColor={handleThemeColor} />
+		<div className="main-container">
+			<Sidebar />
+			<div className="main-content" onScroll={scrollDown}>
+				<HomeSection />
+				<AboutSection />
+				<ServicesComponent />
+				<Recommendations />
+				<ContactComponent />
+				<StyleSwitcher handleThemeColor={handleThemeColor} />
+			</div>
 		</div>
 	);
 }
