@@ -3,7 +3,7 @@ import React from "react";
 
 function ImageGenerator() {
 	return (
-		<div>
+		<div className="container">
 			<ImagePlaceholder />
 		</div>
 	);
